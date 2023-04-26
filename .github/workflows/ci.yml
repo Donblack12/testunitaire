@@ -5,10 +5,14 @@ on: [push]
 jobs:
   build-test:
     runs-on: ubuntu-latest
-
-    steps:
-    - uses: actions/checkout@v3
-    - uses: php-actions/composer@v6 # or alternative dependency management
-    - uses: php-actions/phpunit@v10
-    # ... then your own project steps ...
     
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.0"
+      - uses: php-actions/composer@v6
+      - name: Run PHPUnit
+        run: ./vendor/bin/phpunit # runs PHPUnit using the locally installed version
+      # ... then your own project steps ...
