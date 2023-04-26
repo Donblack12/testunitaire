@@ -11,7 +11,7 @@ jobs:
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: "8.0"
+          php-version: "8.1"
       - uses: php-actions/composer@v6
       - name: Run PHPUnit
         run: ./vendor/bin/phpunit # runs PHPUnit using the locally installed version
