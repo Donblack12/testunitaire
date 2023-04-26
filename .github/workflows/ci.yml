@@ -14,5 +14,5 @@ jobs:
           php-version: "8.1"
       - uses: php-actions/composer@v6
       - name: Run PHPUnit
-        run: ./vendor/bin/phpunit # runs PHPUnit using the locally installed version
+        run: ./vendor/bin/phpunit ./Tests# runs PHPUnit using the locally installed version
       # ... then your own project steps ...
